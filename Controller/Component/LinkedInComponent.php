@@ -15,7 +15,7 @@ class LinkedInComponent extends Component {
 		'scope' => 'r_basicprofile'
 	];
 
-	public function initialize(Controller $controller, $settings = array()){
+	public function initialize(Controller $controller, $settings = []){
 		$this->Controller = $controller;
 		$this->_set($settings);
 
@@ -27,7 +27,7 @@ class LinkedInComponent extends Component {
 	}
 
 	public function connect($redirectUrl = null) {
-		if ($redirectUrl === null) $redirectUrl = array('controller' => strtolower($this->Controller->name), 'action' => 'linkedin_connect');
+		if ($redirectUrl == null) $redirectUrl = ['controller' => strtolower($this->Controller->name), 'action' => 'linkedin_connect'];
 
 		$requestToken = $this->createConsumer()->getRequestToken(self::AUTH_URL . 'uas/oauth/requestToken', Router::url($redirectUrl, true), 'POST', ['scope' => $this->config['scope']]);
 		
@@ -36,7 +36,7 @@ class LinkedInComponent extends Component {
 	}
 
 	public function authorize($redirectUrl = null) {
-		if ($redirectUrl === null) $redirectUrl = array('controller' => strtolower($this->Controller->name), 'action' => 'linkedin_authorize');
+		if ($redirectUrl == null) $redirectUrl = ['controller' => strtolower($this->Controller->name), 'action' => 'linkedin_authorize'];
 
 		$requestToken = unserialize($this->Controller->Session->read(self::SESSION_REQUEST));
 
