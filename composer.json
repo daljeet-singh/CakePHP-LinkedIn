@@ -21,6 +21,9 @@
 		"composer/installers": "*"
 	},
 	"extra": {
+		"branch-alias": {
+			"dev-master": "1.x-dev"
+		},
 		"installer-name": "LinkedIn"
 	}
 }
