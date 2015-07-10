@@ -17,7 +17,7 @@ composer require easyrentcom/cakephp-linkedin:1.*@dev
 
 Alternately clone the repository into your `app/Plugin/LinkedIn` directory:
 ```bash
-git clone git://github.com/easyrentcom/CakePHP-LinkedIn.git app/Plugin/LinkedIn
+git clone git://github.com/easyrent/CakePHP-LinkedIn.git app/Plugin/LinkedIn
 ```
 
 ## Setup
